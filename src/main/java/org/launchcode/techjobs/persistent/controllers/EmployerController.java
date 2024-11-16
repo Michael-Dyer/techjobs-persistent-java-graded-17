@@ -19,13 +19,13 @@ public class EmployerController {
 
 
     @Autowired
-    private EmployerRepository employerrepository;
+    private EmployerRepository employerRepository;
 
 
-    @GetMapping("")
+    @GetMapping("/")
     public String index(Model model){
 
-        model.addAttribute("employers", employerrepository.findAll());
+        model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
 
@@ -44,14 +44,14 @@ public class EmployerController {
         }
 
         //saves employer from employer repository
-        employerrepository.save(newEmployer);
+        employerRepository.save(newEmployer);
         return "redirect:/employers";
     }
 
     @GetMapping("view/{employerId}")
     public String displayViewEmployer(Model model, @PathVariable int employerId) {
 
-        Optional<Employer> optEmployer = employerrepository.findById(employerId);
+        Optional<Employer> optEmployer = employerRepository.findById(employerId);
         if (optEmployer.isPresent()) {
             Employer employer = (Employer) optEmployer.get();
             model.addAttribute("employer", employer);
