@@ -5,6 +5,7 @@ import jakarta.validation.Valid;
 
 import org.launchcode.techjobs.persistent.models.Skill;
 
+import org.launchcode.techjobs.persistent.models.data.EmployerRepository;
 import org.launchcode.techjobs.persistent.models.data.SkillRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,7 +52,7 @@ public class SkillController {
         //saves employer from employer repository
         skillRepository.save(newSkill);
         //return "redirect:";
-        return "redirect:/skills";
+        return "redirect:";
 
     }
 

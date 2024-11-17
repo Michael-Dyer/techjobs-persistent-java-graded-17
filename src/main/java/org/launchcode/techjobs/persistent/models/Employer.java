@@ -20,9 +20,9 @@ public class Employer extends AbstractEntity {
     @Size(min = 2, max = 150)
     private String location;
 
-
-    @OneToMany(mappedBy = "employer_id")
-    @JoinColumn
+    //this will allow us to map a single employer to many jobs(joining by id)
+    @OneToMany
+    @JoinColumn(name = "employer_id")
     private List<Job> jobs = new ArrayList<>();
 
 
