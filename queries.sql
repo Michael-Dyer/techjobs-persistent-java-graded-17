@@ -8,4 +8,7 @@ DROP TABLE job;
 
 --Part 4
 
-
+--job_skills is linking the skills.id with jobs.id
+SELECT * FROM skill
+JOIN job_skills ON skill.id = job_skills.skills_id
+ORDER BY name ASC;

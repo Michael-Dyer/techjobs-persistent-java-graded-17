@@ -19,7 +19,8 @@ public class Job extends AbstractEntity{
 
 
     //private String skills;
-    @ManyToMany(mappedBy="jobs")
+    //only one "mapped to can be given without an error
+    @ManyToMany()
     private List<Skill> skills = new ArrayList<>();
 
     //job can have only one employer
