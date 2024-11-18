@@ -11,6 +11,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -24,9 +25,9 @@ public class EmployerController {
 
     @GetMapping("/")
     public String index(Model model){
-
-
-        model.addAttribute("employers", employerRepository.findAll());
+        //needed to add this in as a list
+        List employers = (List<Employer>) employerRepository.findAll();
+        model.addAttribute("employers", employers);
         return "employers/index";
     }
 
