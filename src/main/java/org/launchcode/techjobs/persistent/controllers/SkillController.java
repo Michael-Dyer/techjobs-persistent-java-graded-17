@@ -24,11 +24,11 @@ public class SkillController {
     private SkillRepository skillRepository;
 
 
-    @RequestMapping(value="/")
+    @GetMapping(value="/")
     public String index(Model model){
 
 
-        //model.addAttribute("title","All Skills");
+
         model.addAttribute("skills", skillRepository.findAll());
 
         return "skills/index";
